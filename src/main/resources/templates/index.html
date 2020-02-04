@@ -8,7 +8,7 @@
 <body>
 <header>
     <h1 class="top-title">Yolo Pizza</h1>
-    <a th:href="@{/(basketId=-1)}">Nouveau panier</a>
+    <a class="top-new-basket" th:href="@{/(basketId=-1)}">Nouveau panier</a>
     <nav class="nav-basket-container" th:if="${basketIds.size()} > 1">
         <a class="nav-basket-item" th:each="bsktId : ${basketIds}" th:href="@{/(basketId=${bsktId})}" th:text="|Panier ${bsktId}|">Choix du panier</a>
     </nav>
@@ -26,8 +26,8 @@
 </section>
 <aside class="basket-container">
     <h4 th:text="|Panier ${basket.id}|">Panier</h4>
-    <div class="top-basket-amount" th:utext="|<b>Total:</b> ${amount} €|">Montant</div>
-    <a th:href="@{/delete(basketId=${basket.id})}">Supprimer</a>
+    <div th:utext="|<b>Total:</b> ${amount} €|">Montant</div>
+    <a class="basket-delete" th:href="@{/delete(basketId=${basket.id})}">Supprimer</a>
 </aside>
 </body>
 </html>

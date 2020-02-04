@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Acme|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto|Zhi+Mang+Xing&display=swap');
 
 body {
     display: flex;
@@ -9,34 +9,37 @@ body {
 
 header {
     width: 100%;
-    background-color: indianred;
-    color: white;
-    font-family: Acme;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .top-title {
-    font-size: 2.2em;
+    font-size: 2.8em;
+    color: #ff6817;
+    font-family: 'Zhi Mang Xing', cursive;
 }
 
 .nav-basket-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .nav-basket-item {
+    color: dimgrey;
     text-decoration: none;
-    color: black;
-    background-color: white;
-    padding: 5px;
+    border: 1px solid dimgrey;
+    border-radius: 6px;
+    padding: 5px 10px;
     margin: 5px;
 }
 
 .pizzas-container {
-    max-width: 1000px;
+    padding: 30px;
+    max-width: 1400px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -44,7 +47,7 @@ header {
 }
 
 .pizza-card {
-    padding: 10px;
+    padding: 13px;
     width: 250px;
     margin: 10px 20px;
     border: 1px solid grey;
@@ -61,7 +64,7 @@ header {
     flex-direction: column;
 }
 
-.pizza-add {
+.pizza-add, .top-new-basket {
     align-self: center;
     color: indianred;
     text-decoration: none;
@@ -73,4 +76,15 @@ header {
 .basket-container {
     display: flex;
     flex-direction: column;
+    border: 1px solid lightgray;
+    padding: 15px;
+}
+
+.basket-delete {
+    margin-top: 10px;
+    color: white;
+    background-color: darkred;
+    text-decoration: none;
+    border-radius: 6px;
+    padding: 8px 16px;
 }
