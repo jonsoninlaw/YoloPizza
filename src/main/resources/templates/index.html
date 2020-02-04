@@ -7,10 +7,10 @@
 </head>
 <body>
 <header>
-    <h1 class="top-title">YOLO PIZZA</h1>
+    <h1 class="top-title">Yolo Pizza</h1>
     <a th:href="@{/(basketId=-1)}">Nouveau panier</a>
-    <nav th:if="${basketIds.size()} > 1">
-        <a th:each="bsktId : ${basketIds}" th:href="@{/(basketId=${bsktId})}" th:text="|Panier ${bsktId}|">Choix du panier</a>
+    <nav class="nav-basket-container" th:if="${basketIds.size()} > 1">
+        <a class="nav-basket-item" th:each="bsktId : ${basketIds}" th:href="@{/(basketId=${bsktId})}" th:text="|Panier ${bsktId}|">Choix du panier</a>
     </nav>
 </header>
 <div></div>
