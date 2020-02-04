@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Yolo Pizza</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1 class="top-title">YOLO PIZZA</h1>
+    <div class="top-basket-container">
+        <div class="top-basket-quantity">Quantité</div>
+        <div class="top-basket-amount">Montant</div>
+        <a class="top-basket-proceed">Commander</a>
+    </div>
+</header>
+<section class="pizzas-container">
+    <article class="pizza-card" th:each="pizza : ${pizzas}" th:object="${pizza}">
+        <img class="pizza-img" th:src="*{image}">
+        <div class="pizza-content">
+            <h4 class="pizza-name" th:text="*{name}">Nom de la pizza</h4>
+            <p class="pizza-price" th:text="|*{price} €|">Prix</p>
+            <a class="pizza-add">Ajouter</a>
+        </div>
+    </article>
+</section>
+</body>
+</html>
