@@ -16,7 +16,7 @@ public class Pizza {
 
     private String image;
 
-    @OneToMany(mappedBy = "basket")
+    @OneToMany(mappedBy = "pizza")
     private List<BasketPizza> basketPizzas;
 
     public Pizza() {

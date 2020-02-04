@@ -8,22 +8,26 @@
 <body>
 <header>
     <h1 class="top-title">YOLO PIZZA</h1>
-    <div class="top-basket-container">
-        <h4>Panier</h4>
-        <div class="top-basket-quantity" th:text="|${quantity} pizzas|">Quantité</div>
-        <div class="top-basket-amount" th:text="|${amount} €|">Montant</div>
-        <a class="top-basket-proceed">Commander</a>
-    </div>
+    <a th:href="@{/(basketId=-1)}">Nouveau panier</a>
+    <nav th:if="${basketIds.size()} > 1">
+        <a th:each="bsktId : ${basketIds}" th:href="@{/(basketId=${bsktId})}" th:text="|Panier ${bsktId}|">Choix du panier</a>
+    </nav>
 </header>
+<div></div>
 <section class="pizzas-container">
     <article class="pizza-card" th:each="pizza : ${pizzas}" th:object="${pizza}">
         <img class="pizza-img" th:src="*{image}">
         <div class="pizza-content">
             <h4 class="pizza-name" th:text="*{name}">Nom de la pizza</h4>
             <p class="pizza-price" th:text="|*{price} €|">Prix</p>
-            <a class="pizza-add" th:href="@{/buy(pizzaId=*{id}, basketId=${basketId})}">Ajouter</a>
+            <a class="pizza-add" th:href="@{/buy(pizzaId=*{id}, basketId=${basket.id})}">Ajouter</a>
         </div>
     </article>
 </section>
+<aside class="basket-container">
+    <h4 th:text="|Panier ${basket.id}|">Panier</h4>
+    <div class="top-basket-amount" th:utext="|<b>Total:</b> ${amount} €|">Montant</div>
+    <a th:href="@{/delete(basketId=${basket.id})}">Supprimer</a>
+</aside>
 </body>
 </html>

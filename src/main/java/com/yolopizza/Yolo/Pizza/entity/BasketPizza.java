@@ -20,6 +20,11 @@ public class BasketPizza {
 
     }
 
+    public BasketPizza(Pizza pizza, Basket basket) {
+        this.pizza = pizza;
+        this.basket = basket;
+    }
+
     public Long getId() {
         return id;
     }

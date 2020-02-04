@@ -9,13 +9,10 @@ import java.util.List;
 public class Basket {
 
     @Id
-    @NotNull
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Date date;
-
-    @OneToMany(mappedBy = "pizza")
+    @OneToMany(mappedBy = "basket", cascade = CascadeType.ALL)
     private List<BasketPizza> basketPizzas;
 
     public Basket() {
@@ -27,14 +24,6 @@ public class Basket {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public List<BasketPizza> getBasketPizzas() {

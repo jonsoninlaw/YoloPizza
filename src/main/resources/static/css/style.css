@@ -14,8 +14,9 @@ header {
     font-size: 3em;
 }
 
-.top-basket-container {
+.basket-container {
     display: flex;
+    flex-direction: column;
 }
 
 .pizzas-container {
@@ -28,6 +29,7 @@ header {
 .pizza-card {
     width: 250px;
     margin: 10px 20px;
+    border: 1px solid grey;
 }
 
 .pizza-img {
