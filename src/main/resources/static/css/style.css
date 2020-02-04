@@ -1,3 +1,9 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 header {
     display: flex;
     flex-direction: column;
@@ -12,7 +18,20 @@ header {
     display: flex;
 }
 
+.pizzas-container {
+    max-width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.pizza-card {
+    width: 250px;
+    margin: 10px 20px;
+}
 
 .pizza-img {
-    width: 200px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
 }

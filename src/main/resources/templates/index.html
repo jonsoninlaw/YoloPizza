@@ -9,8 +9,9 @@
 <header>
     <h1 class="top-title">YOLO PIZZA</h1>
     <div class="top-basket-container">
-        <div class="top-basket-quantity">Quantité</div>
-        <div class="top-basket-amount">Montant</div>
+        <h4>Panier</h4>
+        <div class="top-basket-quantity" th:text="|${quantity} pizzas|">Quantité</div>
+        <div class="top-basket-amount" th:text="|${amount} €|">Montant</div>
         <a class="top-basket-proceed">Commander</a>
     </div>
 </header>
@@ -20,7 +21,7 @@
         <div class="pizza-content">
             <h4 class="pizza-name" th:text="*{name}">Nom de la pizza</h4>
             <p class="pizza-price" th:text="|*{price} €|">Prix</p>
-            <a class="pizza-add">Ajouter</a>
+            <a class="pizza-add" th:href="@{/buy(pizzaId=*{id}, basketId=${basketId})}">Ajouter</a>
         </div>
     </article>
 </section>
